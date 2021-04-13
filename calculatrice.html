@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculatice</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+      .col-2{
+        color: rgb(88, 0, 100);
+        width: 30px;
+        height: 70px;
+        border-style: outset;
+      }
+    </style>
+    
+   
+</head>
+<body >
+  <div class="container">
+    <div class="row"> 
+    <div class="col-3"></div>
+  <div  class=" col-6" style="width: 100px; height: 465px;  background-color: rgb(175, 203, 219);margin-top: 5% ;margin-bottom: 5%;border-style: outset;">
+    <div>
+      <div style="margin-left: 40%; padding-top: 3mm;"> <h4 style="font-family: Arial, Helvetica, sans-serif;"> calculatrice </h4></div>
+      <hr class="shadow  rounded">
+    </div>
+     <div class="row shadow  rounded">
+      <input type="text" disabled  style="background-color: rgba(202, 212, 216, 0.966);width: 510px;height: 50px; margin:0px 5px 5px 18px;" id="resultat" />
+  </div>
+      <div class="row">
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 10px 5px 5px 18px"id="7" onclick="sel(7)">7</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 10px 5px 5px 5px "id="8" onclick="sel(8)">8</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 10px 5px 5px 5px "id="9" onclick="sel(9)">9</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded "style="margin:10px 5px 5px 10px ; background-color:rgb(140, 150, 156)" id="ce" onclick="del()">CE</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="background-color: rgb(190, 179, 180);margin:10px 5px 5px 5px" id="c"onclick="l()">C</button>
+
+      </div>
+      <div class="row">
+
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 18px;" id="4" onclick="sel(4)">4</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px;" id="5" onclick="sel(5)">5</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px;"id="6" onclick="sel(6)">6</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 10px;" id="/" onclick="sel('/')">/</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px;" id="*" onclick="sel('*')">*</button>
+
+      </div>
+      <div class="row">
+
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded"style="margin: 5px 5px 5px 18px" id="1" onclick="sel(1)">1</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px" id="2" onclick="sel(2)">2</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px;"id="3" onclick="sel(3)">3</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded " style="margin: 5px 5px 5px 10px;"id="-" onclick="sel('-')">-</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 5px;" id="+" onclick="sel('+')">+</button>
+
+      </div>
+      <div class="row">
+
+        <button type="button" class="btn btn-outline-info col-4 shadow  rounded" style="margin: 5px 5px 5px 18px;" id="0" onclick="sel(0)">0</button>
+        <button type="button" class="btn btn-outline-info col-2 shadow  rounded" style="margin: 5px 5px 5px 15px;"id="." onclick="sel('.')">.</button>
+        <button type="button" class="btn btn-outline-info col-4 shadow  rounded" style="margin: 5px 5px 5px 15px;background-color: rgb(214, 216, 206);" id="=" onclick="eql()">=</button>
+
+      </div>
+      </div>
+      </div>
+      </div>
+<script>
+ function sel(n) {
+  $("#resultat").val($("#resultat").val() + n);
+}
+
+function eql(){
+  $("#resultat").val( eval($("#resultat").val()));
+}
+function l(){
+  $("#resultat").val(' ');
+}
+function del (){
+  res = $("#resultat").val();
+  $("#resultat").val(res.substring(0, res.length-1));
+}
+
+</script>
+  
+</body>
+</html>

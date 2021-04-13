@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qcm</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        .row{
+            border: darkgray;
+            margin:5mm 5mm 5mm 5mm;
+        }
+        .col-3{
+            color: rgb(56, 54, 54);
+            box-shadow: 6px 6px rgb(192, 186, 186);
+            background-color: rgb(255, 255, 255);
+        }
+        legend{
+            margin-bottom: 10mm;
+        }
+        
+    </style>
+</head>
+<body class="container">
+<form class="jumbotron">
+    <h1 style="margin: 4mm 4mm 9mm 20mm;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">TEST DE CULTURE GÉNÉRALE INTERMÉDIAIRE </h1>
+
+<div id="f" class="row" > 
+    <legend id="11"> 1-Parmi les hommes politiques suivants, lequel a succédé à Hugo Chavez en tant que Président du Venezuela ?</legend>
+    <input type="radio" id="1" name="f" value="Zhang Yimou" class="col-1 f"><p class="col-3" id="c1"> Zhang Yimou</p>
+    <input type="radio" id="2" name="f" value="Wong Kar-Wai" class="col-1 f"><p class="col-3" id="c2"> Wong Kar-Wai</p>
+    <input type="radio" id="3" name="f" value="Chan Feng Zhao " class="col-1 f"><p class="col-3" id="c3"> Chan Feng Zhao  </p>
+</div>
+
+<div id="h" class="row">
+    <legend id="22"> 2-De l’œuvre de quel écrivain est tirée la célèbre question « Que sais-je ? »</legend>
+    <input type="radio" id="4" name="h" value="Étienne de la Boétie"  class="col-1 h"><p class="col-3" id="c4"> Étienne de la Boétie</p>
+    <input type="radio" id="5" name="h" value="Voltaire" class="col-1 h"><p class="col-3" id="c5"> Voltaire</p>
+    <input type="radio" id="6" name="h" value="Montaigne" class="col-1 h"><p class="col-3" id="c6"> Montaigne</p>
+</div>
+
+<div id="g" class="row">
+    <legend id="33"> 3-Quelle race d’animal est un briard ?</legend>
+    <input type="radio" id="7" name="g" value="Un chien"  class="col-1 g"><p class="col-3 "id="c7"> Un chien</p>
+    <input type="radio" id="8" name="g" value="un chat" class="col-1 g"><p class="col-3" id="c8"> un chat</p>
+    <input type="radio" id="9" name="g" value="un cheval" class="col-1 g"><p class="col-3" id="c9"> un cheval</p>
+</div>
+
+<div id="a" class="row">
+<legend id="44"> 4-Que signifie « procrastiner » ?</legend>
+<input type="radio" id="10" name="a" value="Remettre à plus tard quelque chose"  class="col-1 a"><p class="col-3" id="c10"> Remettre à plus tard quelque chose</p>
+<input type="radio" id="11" name="a" value="Étudier beaucoup en vue d'un examen" class="col-1 a"> <p class="col-3" id="c11">Étudier beaucoup en vue d'un examen</p>
+<input type="radio" id="12" name="a" value="Parler dans un langage particulièrement vulgaire" class="col-1 a"> <p class="col-3"id="c12">Parler dans un langage particulièrement vulgaire</p>
+</div>
+
+<div id="s" class="row">
+<legend id="55"> 5-Quelle théorie doit-on à Isaac Newton ?</legend>
+<input type="radio" id="13" name="s" value="la théorie atomique" class="col-1 s"><p class="col-3" id="c13"> la théorie atomique</p>
+<input type="radio" id="14" name="s" value="La théorie de la gravitation universelle" class="col-1 s"><p class="col-3" id="c14">La théorie de la gravitation universelle</p>
+<input type="radio" id="15" name="s" value="La théorie de l'évolution des espèces" class="col-1 s"><p class="col-3" id="c15">La théorie de l'évolution des espèces</p>
+</div>
+<p id="demo"></p>
+<div>
+    <input type="button" class="btn btn-outline-secondary" id="l1" value="corriger">
+</div>
+</form>
+
+  
+<script>
+$(document).ready(function(){
+  
+
+
+    $("input[type='button']").click(function(){
+        	var radioValue = $("input[name='a']:checked").val();
+            var radioV = $("input[name='s']:checked").val();
+            var radio = $("input[name='g']:checked").val();
+            var radi = $("input[name='h']:checked").val();
+            var rad = $("input[name='f']:checked").val();
+            var i =0;
+
+            if( radioV=="La théorie de la gravitation universelle"){
+                 $("#55,#c14").css({ "color":"green"});
+                 i++;
+                }
+                else if(radioV=="la théorie atomique"){
+                  $("#55,#c13").css({ "color":"red"});
+                  $("#c14").css({ "color":"green"});
+
+                }
+                else if(radioV=="La théorie de l'évolution des espèces"){
+                  $("#55,#c15").css({ "color":"red"});
+                  $("#c14").css({ "color":"green"});
+
+                }else{
+                    $("#55").css({ "color":"orange"});
+
+                }
+               
+            
+              if( radioValue=="Remettre à plus tard quelque chose"){
+                 $("#44,#c10").css({ "color":"green"});
+                 i++;
+                }
+                else if(radioValue=="Étudier beaucoup en vue d'un examen"){
+                  $("#44,#c11").css({ "color":"red"});
+                  $("#c10").css({ "color":"green"});
+
+                }
+                else if(radioValue=="Parler dans un langage particulièrement vulgaire"){
+                  $("#44,#c12").css({ "color":"red"});
+                  $("#c10").css({ "color":"green"});
+
+                }else{
+                    $("#44").css({ "color":"orange"});
+
+                }
+               
+
+                if( radio=="Un chien"){
+                 $("#33,#c7").css({ "color":"green"});
+                 i++;
+                }
+                else if(radio=="un chat"){
+                  $("#33,#c8").css({ "color":"red"});
+                  $("#c7").css({ "color":"green"});
+
+                }
+                else if(radio=="un cheval"){
+                  $("#33,#c9").css({ "color":"red"});
+                  $("#c7").css({ "color":"green"});
+
+                }else{
+                    $("#33").css({ "color":"orange"});
+
+                }
+               
+
+                if( radi=="Montaigne"){
+                 $("#22,#c6").css({ "color":"green"});
+                 i++;
+                }
+                else if(radi=="Voltaire"){
+                  $("#22,#c5").css({ "color":"red"});
+                  $("#c6").css({ "color":"green"});
+
+                }
+                else if(radio=="Étienne de la Boétie"){
+                  $("#22,#c4").css({ "color":"red"});
+                  $("#c6").css({ "color":"green"});
+
+                }else{
+                    $("#22").css({ "color":"orange"});
+
+                }
+               
+              
+                if( rad=="Wong Kar-Wai"){
+                 $("#11,#c2").css({ "color":"green"});
+                 i++;
+                }
+                else if(rad=="Zhang Yimou"){
+                  $("#11,#c1").css({ "color":"red"});
+                  $("#c2").css({ "color":"green"});
+
+                }
+                else if(rad=="Chan Feng Zhao "){
+                  $("#11,#c3").css({ "color":"red"});
+                  $("#c2").css({ "color":"green"});
+
+                }
+                else{
+                    $("#11").css({ "color":"orange"});
+
+                }     
+                document.getElementById("demo").innerHTML = "vote note est: "+i+"/5";
+
+        });
+});
+</script>
+</body>
+</html>
